@@ -49,6 +49,39 @@ router.post('/sign-up', userMiddleware.validateRegister, (req, res, next) => {
     )
 })
 
+router.post('/stream-up', (req, res) => {
+  db.query(
+    `INSERT INTO stream (id, stream_url) VALUES ('${uuid.v4()}', ${db.escape(
+        req.body.stream
+    )})`,
+    (err, result) => {
+        if (err) {
+          return res.status(400).send({
+              msg: err
+          });
+        }
+        return res.status(201).send({
+          msg: 'Stream is up!'
+        })
+    }
+  )
+})
+
+router.get('/stream', (req, res) => {
+  db.query('SELECT * FROM stream LIMIT 1;',
+    (err, result) => {
+        if (err) {
+          return res.status(400).send({
+              msg: err
+          });
+        }
+        return res.status(201).send({
+          data: result
+        })
+    }
+  )
+})
+
 router.post('/login', (req, res, next) => {
     db.query(
       `SELECT * FROM users WHERE username = ${db.escape(req.body.username)};`,
@@ -109,7 +142,6 @@ router.post('/login', (req, res, next) => {
   })
 
 router.get('/secret-route', userMiddleware.isLoggedIn, (req, res, next) => {
-    console.log(req.userData)
     res.send('This is the secret content. Only logged in users can see that!')
 })
 

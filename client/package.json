@@ -16,6 +16,7 @@
     "bootstrap-vue": "^2.21.2",
     "vue": "^2.6.14",
     "vue-router": "^3.0.1",
+    "vue-youtube-embed": "^2.2.2",
     "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {

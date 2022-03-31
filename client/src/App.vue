@@ -1,9 +1,9 @@
 <template>
   <div class="vue-tempalte main">
-    <nav class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top">
+    <!-- <nav class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top">
       <div class="container">
         <a class="navbar-brand float-left" target="_blank">
-           Stream Application
+           Stream App
         </a>
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
@@ -17,10 +17,10 @@
           </li>
         </ul>
       </div>
-    </nav>
+    </nav> -->
 
     <div id="app" class="App">
-      <div class="vertical-center">
+      <div class="content">
         <div class="inner-block">
           <router-view />
         </div>
@@ -43,13 +43,11 @@ export default {
 </script>
 
 <style>
-#app {
+.App {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
   background: #6a11cb;
   background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
